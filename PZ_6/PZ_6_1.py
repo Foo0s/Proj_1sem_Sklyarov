@@ -4,12 +4,12 @@
    кроме элементов с номерами от K до L включительно.'''
 
 from random import randint
-'''Импортирование зи библиотеки(модуля) random функции randint.'''
-def numbers_random(number_1, number_2, number_3):  #Функция number_random где в списке генерируется список рандомных значений.
-    list_1 = []  # Создание пустого списка
+'''Импортирование из библиотеки random функции randint.'''
+def numbers_random(number_1, number_2, number_3):  #В функции 3 аргумента
+    list_1 = []
     for number in range(0, number_1):   #Цикл пока индекс в диапазоне списка(от 1 до 100).
         list_1.append(randint(1, 100))      # Происходит добавления в список всех значений с индексом number.
-    print('Изначальный список: ', list_1)   # Вывод изначального списка
+    print('Изначальный список: ', list_1)
     del list_1[number_3:number_2+1]         # Удаление в списке значений от K до L
     print('Список после удаления индексов от k до L: ', list_1) # Вывод списка после удаления значений от k до l
     sums = f'Сумма списка: {sum(list_1)}'
@@ -21,5 +21,7 @@ number_L = int(input('Введите число L, оно должно быть 
 number_K = int(input('Введите число K, оно должно быть больше 1 и меньше L: '))
 if number_L >= number_input or number_L <= number_K:
     print('Ошибка')
+elif number_K <= 1 or number_K >= number_L:
+    print("Ошибка")
 else:
     print(numbers_random(number_input, number_L, number_K))
