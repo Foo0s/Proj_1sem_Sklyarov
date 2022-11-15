@@ -16,13 +16,16 @@ def numbers_random(number_1, number_2, number_3):  #В функции 3 аргу
     return sums                     # Возвращение СУММЫ списка (итоговое значение после вычета элементов от k до L)
 
 '''Ввод/Вывод данных'''
-number_input = int(input('Введите размер списка N: '))
-number_L = int(input('Введите число L, оно должно быть меньше N: '))
-number_K = int(input('Введите число K, оно должно быть больше 1 и меньше L: '))
+try:
+    number_input = int(input('Введите размер списка N: '))
+    number_L = int(input('Введите число L, оно должно быть меньше N: '))
+    number_K = int(input('Введите число K, оно должно быть больше 1 и меньше L: '))
 
-if number_L >= number_input or number_L <= number_K: # Вывод ошибки если не соответствует условию.
-    print('Ошибка')
-elif number_K <= 1 or number_K >= number_L:
+    if number_L >= number_input or number_L <= number_K: # Вывод ошибки если не соответствует условию.
+        print('Ошибка')
+    elif number_K <= 1 or number_K >= number_L:
+        print("Ошибка")
+    else:
+        print(numbers_random(number_input, number_L, number_K)) # Вызов функции
+except ValueError:
     print("Ошибка")
-else:
-    print(numbers_random(number_input, number_L, number_K)) # Вызов функции
