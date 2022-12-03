@@ -24,6 +24,5 @@ def podshet(number):
 
 '''Вывод'''
 student["Среднее арифмитическое"] = podshet(number)
-'''Цикл, который проходится по каждому значению в словаре.'''
-for n in student.items():
-    print(n)
+'''Вывод данных.'''
+print(student)
