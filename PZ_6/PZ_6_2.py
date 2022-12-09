@@ -10,7 +10,7 @@ try:
     list_1 = []
     for i in range(1, number+1):
         list_1.append(i)
-    n = [i for i in range(1, number)]
+    n = [i for i in range(1, number+1)]
     if list_1 == n:
         print(0)
     else:
