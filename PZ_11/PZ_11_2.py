@@ -5,33 +5,28 @@
     стихотворной форме выведя строки в обратном порядке.
 """
 
-#Открытие файла
-from typing import TextIO
-
-f1 = open("text18-21.txt", "r", encoding="UTF-8")
+f1 = open("text18-21.txt", "r", encoding="UTF-8") #Открытие файла в режиме чтения
 f2 = f1.read()
 score = 0 # счетчик
-for i in f2:
-    print(i, end='')
-for n in range(len(f2)):
-    if f2[n] in ",.!?;:":
+for i in f2: #Цикл который проходит по каждой строчке
+    print(i, end='') # Вывод каждой строки
+for n in range(len(f2)): # Цикл который проходит по символу в строке
+    if f2[n] in ",.!?;:": #Условие на наличие знаков препинания
         score += 1
 print(f"\n\nКоличество знаков препинаний: {score}\n")
-f1.close()
+f1.close() #Закрытие файла
 
 #Создание нового файла.
-f4 = open("zadanie_2.txt", "r", encoding='UTF-8')
-f3 = reversed(f4.readlines())
-list_3 = []
-for i in f3:
+f4 = open("zadanie_2.txt", "r", encoding='UTF-8') #Открытие файла в режиме чтения
+f3 = reversed(f4.readlines()) #Переворачивает текст сверху-вниз
+list_3 = [] #Создание пустого списка
+for i in f3: #Цикл который проходит по каждой строке в файле
     list_3.append(i)
-f4.close()
-print(list_3)
+f4.close() #Закрытие файла
 
 #Запись в файл данных.
-f4 = open("zadanie_2.txt", "w+", encoding="UTF-8")
-for i in list_3:
-    print(i)
-    f4.write(i)
-list_3 = []
-f4.close()
+f4 = open("zadanie_2.txt", "w+", encoding="UTF-8") #Открытие файла в режиме как и чтения, так и записи.
+for i in list_3: #Цикл который проходит по каждой строке
+    print(i, end='') #Вывод строки
+    f4.write(i) #Запись в файл
+f4.close() #Закрытие файла
