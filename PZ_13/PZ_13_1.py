@@ -29,3 +29,4 @@ for k in answer:
     for n in k:
         print(n, end='\n')
 min_number(answer)
+
