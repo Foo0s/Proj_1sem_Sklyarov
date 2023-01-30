@@ -10,23 +10,25 @@ number = random.randint(3, 5)
 
 #Генерация матрицы
 def matrix(number):
-    matrix = [[1*random.randint(10, 40) for x in range(number)] for i in range(number)]
-    yield matrix
+    matrix = [[1*random.randint(10, 40) for x in range(number)] for i in range(number)] #Генерация матрицы
+    yield matrix #Возвращение значения
 
-def min_number(st):
-    answ = iter(st)
-    c = 0
-    while True:
-        b = next(answ)
-        c += 1
-        print(b)
-        if c == len(st)-1:
+min_number_func = 0 #Флаг
+
+def min_number(st): #Функция, которая выводит матрицу
+    global min_number_func #Глобальная переменная
+    print("Вывод матрицы:")
+    answ = iter(st[0]) #Итерабельный объект
+    while True: #Бесконечный цикл
+        try: #Обработчик ошибок
+            b = next(answ) #Проходит по всем элементам в итерабельном объекте
+            if b == st[0][-2]: #Провека на предпоследнюю строку
+                min_number_func = min(b) #Минимальное значение
+            print(*b) #вывод строк матрицы
+        except StopIteration: #Обработчик ошибки - остановка
+            print("Минимальное значение в предпоследней строке:", min_number_func) #Вывод итого мин. элемента
             break
-    print(answ)
 
+#Вызов 2-ух функций
 answer = list(matrix(number))
-for k in answer:
-    for n in k:
-        print(n, end='\n')
 min_number(answer)
-
