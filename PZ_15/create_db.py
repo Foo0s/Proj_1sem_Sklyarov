@@ -30,7 +30,6 @@ with sqql.connect("zarplata.db") as file:
             FOREIGN KEY (id_sotryd) REFERENCES Anketa(id) ON DELETE CASCADE ON UPDATE CASCADE
             )""")
 
-
     #Заполнение таблицы.
     #base.executemany("INSERT INTO Anketa VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)", employees.employes)
     #base.executemany("INSERT INTO Bolnichnie_listi VALUES(?, ?, ?, ?, ?, ?, ?)", employees.list_hospital)
