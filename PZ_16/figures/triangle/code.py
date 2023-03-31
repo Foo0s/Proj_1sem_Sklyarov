@@ -10,4 +10,4 @@ def triangle_area(st1, st2=b, st3=c):
     """Вычисляет плошадь треугольника.
     Необходимы 3 стороны - 3 значения."""
     pol_p = (st2 + st3 + st1) / 2
-    print((s * (s - st1) * (s - st2) * (s- st3)) ** 0.5)
+    print((pol_p * (pol_p - st1) * (pol_p - st2) * (pol_p- st3)) ** 0.5)
