@@ -18,12 +18,12 @@ with sql.connect("zarplata.db") as db:
 
     #UPDATE -5. Обновить базовую ставку сотрудника в таблице Анкета на определеный процент, использую INNER JOIN
     #с таблицей Bolnichnie_listi. При этом необходимо исключить из обновления сотрудников, у которых неоплаченные больничные листы.
-    db.execute("UPDATE Anketa as ank SET baze_stavka=baze_stavka+(baze_stavka*0.15) FROM Bolnichnie_listi bl WHERE buy=True AND ank.[id_spec]=bl.[id_spec]")
+    db.execute("UPDATE Anketa as ank SET baze_stavka=baze_stavka+(baze_stavka*0.15) FROM Bolnichnie_listi bl WHERE buy=False AND ank.[id_spec]=bl.[id_spec]")
 
     #UPDATE -6. Обновить дату начала больничного листа в таблице Больничные листы на опрд. дату, использую INNER JOIN.
     #c таблицей Anketa. При этом необходимо исключить из обновления больничные листы с уже пройденной датой начала
     # Месяц - Март, число - 14.
-    db.execute("UPDATE Bolnichnie_listi as bl SET date_start='2023-03-14' FROM Anketa an WHERE an.[id_spec]=bl.[id_spec] AND bl.[date_start] >= '2023-03-14'")
+    db.execute("UPDATE Bolnichnie_listi as bl SET date_start='2023-03-14' FROM Anketa ank WHERE bl.[id_spec]=ank.[id_spec] AND bl.[date_start] >= '2023-03-14'")
 
     #UPDATE -7. Обновить причину больничного листа в таблице Больничные листы на определенное значение для всех сотрудников
     #работающих в отделе Бухгалтерия
