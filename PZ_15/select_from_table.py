@@ -31,7 +31,7 @@ def search_selects():
 
         #Запрос -7. Вывести список всех сотрудников, имеющих больничные листы на текущий месяц.
         print()
-        print(base.execute("SELECT * FROM Bolnichnie_listi WHERE date_start AND date_finall BETWEEN '2023.03.01' AND '2023.03.30'").fetchall())
+        print(base.execute("SELECT * FROM Bolnichnie_listi WHERE date_start AND date_finall BETWEEN '2023-03-01' AND '2023-03-30'").fetchall())
 
         #Запрос -8. Вывести среднюю базовую ставку всех сотрудников.
         print()
@@ -44,6 +44,7 @@ def search_selects():
         print(base.execute("SELECT name, surname, baze_stavka FROM Anketa WHERE baze_stavka > 100000").fetchall())
 
         #Запрос -10. Вывести всех сотрудников, и общее кол-во дней, проведенных ими на больничном.
+        print()
         print("Все сотрудники: ")
         all_day = base.execute("SELECT an.* FROM Bolnichnie_listi bl INNER JOIN Anketa an ON bl.[id_spec]=an.[id_spec]").fetchall()
         print(all_day)

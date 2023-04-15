@@ -24,7 +24,7 @@ def text_work(text):
     return telephone_1 + telephone_2, count_numbers #Возвращение значений,данных.
 
 #Открытие файла - чтение.
-with open("hotline.txt", encoding="UTF-8") as f1:
+with open("PZ_14/hotline.txt", encoding="UTF-8") as f1:
     f2 = f1.read() #Чтение файла.
     count_line = "".join(f2) #Запись всех строк.
     telephone_one, telephone_two = text_work(f2) #Вызов функции
@@ -32,7 +32,7 @@ with open("hotline.txt", encoding="UTF-8") as f1:
           f" {len(telephone_two)}")
 
 #Открытие файла - запись.
-with open("hotline.txt", "w", encoding="UTF-8") as f3: #Открытие файла в формате записи.
+with open("PZ_14/hotline.txt", "w", encoding="UTF-8") as f3: #Открытие файла в формате записи.
     #Вывод данных.
     f4 = f3.write(re.sub("«Горячая линия»", "«Горячая линия» «Министерства образования Ростовской области»", count_line))
     count_zamen = len(re.findall("«Горячая линия»", count_line))
