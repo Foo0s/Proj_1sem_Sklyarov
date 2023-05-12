@@ -29,7 +29,6 @@ class Listings:
         print("Отсортированный массив: ",sorted(self.list))
 
 
-
 #Создание экземпляра.
 prog1 = Listings(10)
 prog1.upload_list(2)

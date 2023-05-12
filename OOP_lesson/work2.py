@@ -15,7 +15,6 @@ class TriangleChecker:
         self.st2 = st2
         self.st3 = st3
 
-
     def is_triangle(self):
         if type(self.st1) == int and type(self.st2) == int and type(self.st3) == int:
             if self.st1 < 0 or self.st2 < 0 or self.st3 < 0:

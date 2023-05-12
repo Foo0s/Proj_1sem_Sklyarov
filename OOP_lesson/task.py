@@ -49,4 +49,3 @@ if hasattr(Point, "more"):
     del Point.more
 
 print(getattr(Point, "more"))
-
