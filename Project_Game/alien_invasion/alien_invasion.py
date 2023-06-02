@@ -11,6 +11,7 @@ from alien import Alien
 from game_stats import GameStats
 from button import Button
 from scoreboard import Scoreboard
+from sound import Sound
 
 
 class AlienInvasion:
@@ -39,6 +40,9 @@ class AlienInvasion:
 
         'Кнопка'
         self.play_button = Button(self, "PLAY")
+
+        "Звук"
+        self.sound = Sound()
 
     def run_game(self):
         '''Запуск основного цикла игры.'''
@@ -77,6 +81,7 @@ class AlienInvasion:
             f_number.close()
             sys.exit()
         elif event.key == pygame.K_SPACE:
+            self.sound.move_sound_bullet()
             self._fire_bullet()
         elif event.key == pygame.K_p:
             self.start_game()
@@ -183,6 +188,7 @@ class AlienInvasion:
         # При обнаружении удаляет текст. пришельца.
         collisions = pygame.sprite.groupcollide(self.bullets, self.aliens, True, True)
         if collisions:
+            self.sound.move_sound_crush_alien()
             for aliens in collisions.values():
                 self.stats.score += self.settings.alien_points * len(aliens)
             self.sb_al.prep_score()

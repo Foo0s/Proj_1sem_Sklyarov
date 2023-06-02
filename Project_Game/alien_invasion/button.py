@@ -9,20 +9,20 @@ class Button():
         self.screen_rect = self.screen.get_rect()
 
         # Св-ва кнопки.
-        self.width_1, self.height_1 = 90, 90
-        self.width_2, self.height_2 = 90, 90
-        self.width_3, self.height_3 = 90, 90
-        self.width_4, self.height_4 = 90, 90
+        self.width_1, self.height_1 = 150, 70
+        self.width_2, self.height_2 = 150, 70
+        self.width_3, self.height_3 = 150, 70
+        self.width_4, self.height_4 = 150, 70
 
-        self.button_color_1 = (0, 160, 189)
-        self.button_color_2 = (0, 90, 222)
-        self.button_color_3 = (90, 20, 10)
-        self.button_color_4 = (230, 20, 10)
+        self.button_color_1 = (70, 50, 250)
+        self.button_color_2 = (250, 250, 250)
+        self.button_color_3 = (250, 250, 250)
+        self.button_color_4 = (250, 250, 250)
 
-        self.text_color_1 = (233, 233, 1)
-        self.text_color_2 = (233, 233, 1)
-        self.text_color_3 = (233, 233, 1)
-        self.text_color_4 = (233, 233, 1)
+        self.text_color_1 = (0, 0, 0)
+        self.text_color_2 = (0, 0, 0)
+        self.text_color_3 = (0, 0, 0)
+        self.text_color_4 = (0, 0, 0)
 
         self.font_1 = pygame.font.SysFont(None, 30)
 
@@ -61,14 +61,15 @@ class Button():
 
     def draw_button(self):
         '''Отображает кнопку на экране'''
-        self.screen.fill(self.button_color_1, self.rect_1)
+        pygame.draw.rect(self.screen, self.button_color_1, self.rect_1, border_radius=24)
         self.screen.blit(self.mess_image, self.mess_image_rect)
 
-        self.screen.fill(self.button_color_2, self.rect_2)
+        pygame.draw.rect(self.screen, self.button_color_2, self.rect_2, border_radius=24)
         self.screen.blit(self.mess_image_2, self.mess_image_rect_2)
 
-        self.screen.fill(self.button_color_3, self.rect_3)
+        pygame.draw.rect(self.screen, self.button_color_3, self.rect_3, border_radius=24)
         self.screen.blit(self.mess_image_3, self.mess_image_rect_3)
 
-        self.screen.fill(self.button_color_4, self.rect_4)
+        pygame.draw.rect(self.screen, self.button_color_4, self.rect_4, border_radius=24)
         self.screen.blit(self.mess_image_4, self.mess_image_rect_4)
+
