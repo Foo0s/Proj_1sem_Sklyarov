@@ -101,22 +101,32 @@ class AlienInvasion:
         if button_clicked and not self.stats.game_active:
             # Сброс игровых настроек.
             self.settings.initialize_dynamic_settings()
-            self.reset_param()
+            self.stats.game_active = True
+            self.SpaceShip.center_ship()
+            
+
+            
         elif button_clicked_2 and not self.stats.game_active:
-            self.settings.increase_speed()
-            self.reset_param()
+            self.settings.increase_speed(1)
+            self.stats.game_active = True
+            self.SpaceShip.center_ship()
+            
+
+            
 
         elif button_clicked_3 and not self.stats.game_active:
-            self.settings.increase_speed()
-            self.settings.increase_speed()
-            self.reset_param()
+            self.settings.increase_speed(2)
+            self.stats.game_active = True
+            self.SpaceShip.center_ship()
+            
+
 
         elif button_clicked_4 and not self.stats.game_active:
-            self.settings.increase_speed()
-            self.settings.increase_speed()
-            self.settings.increase_speed()
-
-            self.reset_param()
+            self.settings.increase_speed(3)
+            self.stats.game_active = True
+            self.SpaceShip.center_ship()
+            
+            
 
     def reset_param(self):
         # Сброс игровой статистики
@@ -181,7 +191,7 @@ class AlienInvasion:
             # Создание нового флота.
             self.bullets.empty()  # Удаление снарядов
             self._create_fleet()
-            self.settings.increase_speed()
+            self.settings.increase_speed(None)
 
             # Увеличение счета
             self.stats.level += 1
@@ -231,7 +241,6 @@ class AlienInvasion:
         if self.stats.ships_left > 0:
             self.stats.ships_left -= 1
             self.sb_al.prep_ship()
-            self.stats.reset_stats()
             self.sb_al.prep_score()
 
             # Очистка.
@@ -273,7 +282,8 @@ class AlienInvasion:
     def _update_screen(self):
         '''Обновляет изображение на экране и отображает новый экран.'''
         # При каждом проходе цикла перерисовывается экран
-        self.screen.fill(self.settings.bg_color)  ### Заполняем экран цветом
+        self.background = pygame.image.load("I:/Манакова/Proj_1sem_Sklyarov/Project_Game/alien_invasion/images/space.gif").convert_alpha()
+        self.screen.blit(self.background, (0, 0))  ### Заполняем экран цветом
         self.SpaceShip.blitme()
         for bullet in self.bullets.sprites():
             bullet.draw_bullet()

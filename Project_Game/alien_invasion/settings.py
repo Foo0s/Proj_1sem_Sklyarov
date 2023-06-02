@@ -27,7 +27,7 @@ class Settings():
         self.bullet_allowed = 4
 
         # Темп ускорения игры
-        self.speed_game = 9.2
+        self.speed_game = 1.7
         self.initialize_dynamic_settings()
 
         # Темп роста poin_alien
@@ -45,13 +45,23 @@ class Settings():
         self.alien_points = 23
 
         # Рекорд игрока
-        self.high_score = 0
+        self.high_score = open("I:/Манакова/Proj_1sem_Sklyarov/Project_Game/alien_invasion/max_number.txt", "r")
 
-    def increase_speed(self):
+    def increase_speed(self, level):
         '''Увеличивает настройки скорости.'''
-        self.ship_speed_factor *= self.speed_game
-        self.bullet_speed_factor *= self.speed_game
-        self.alien_speed_factor *= self.speed_game
+        if level == 1:
+            self.ship_speed = self.speed_game
+            self.bullet_speed = self.speed_game
+        
+        elif level == 2:
+            self.ship_speed += self.speed_game
+            self.bullet_speed += self.speed_game
+            self.alien_speed += self.speed_game
+
+        else:
+            self.ship_speed += self.speed_game*1.12
+            self.bullet_speed += self.speed_game
+            self.alien_speed += self.speed_game*1.1
 
         # Увеличение point's
         self.alien_points = int(self.alien_points * self.score_point)

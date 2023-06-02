@@ -30,7 +30,6 @@ class Scoreboard():
         rounded_score = round(self.stats.score, -1)
         score_str = "{:,}".format(rounded_score)
         self.score_image = self.font.render(score_str, True, self.text_color, self.settings.bg_color)
-
         # Вывод счета в правой верхней части экрана
         self.score_rect = self.score_image.get_rect()
         self.score_rect.right = self.screen_rect.right - 20
@@ -41,6 +40,8 @@ class Scoreboard():
         high_score = round(self.stats.high_score, -1)
         score_str_user = "{:,}".format(high_score)
         self.score_image_max = self.font.render(score_str_user, True, self.text_color, self.settings.bg_color)
+        with open("I:/Манакова/Proj_1sem_Sklyarov/Project_Game/alien_invasion/max_number.txt", "w") as save_high:
+            save_high.write(str(self.stats.high_score))
 
         # Вывод счета посередине экрана
         self.score_rect_user = self.score_image_max.get_rect()
