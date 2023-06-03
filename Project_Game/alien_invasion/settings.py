@@ -45,7 +45,7 @@ class Settings():
         self.alien_points = 23
 
         # Рекорд игрока
-        self.high_score = open("I:/Манакова/Proj_1sem_Sklyarov/Project_Game/alien_invasion/max_number.txt", "r")
+        self.high_score = open("C:\\Users\\user\\Desktop\\PycharmProjects\\Proj_1sem_Sklyarov\\Project_Game\\alien_invasion\\max_number.txt", "r")
 
     def increase_speed(self, level):
         '''Увеличивает настройки скорости.'''
