@@ -40,7 +40,7 @@ class Scoreboard():
         high_score = round(self.stats.high_score, -1)
         score_str_user = "{:,}".format(high_score)
         self.score_image_max = self.font.render(score_str_user, True, self.text_color, self.settings.bg_color)
-        with open("C:\\Users\\user\\Desktop\\PycharmProjects\\Proj_1sem_Sklyarov\\Project_Game\\alien_invasion\\max_number.txt", "w") as save_high:
+        with open("Project_Game/alien_invasion/max_number.txt", "w") as save_high:
             save_high.write(str(self.stats.high_score))
 
         # Вывод счета посередине экрана
