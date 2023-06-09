@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../kt_3/work_2/script.js"></script>
+</head>
+<body>
+    <form id="user">
+        <label for="name">Введите имя</label>
+        <input type="text" id="name" onclick="MessageForUser()"><br><br>
+        <form>
+            <p>Что вам нравитя больше? </p>
+            <input type="radio" value="Мороженное" name="Мороженное" id="rad_m" onclick="Radiochoice_one()">Мороженное<br><br>
+            <input type="radio" value="Шоколад" id="rad_sh" onclick="Radiochoice_two()">Шоколад
+        </form><br><br>
+        <button onclick='ButtonClick()' id="button">Отправить</button>
+    </form>
+</body>
+</html>
