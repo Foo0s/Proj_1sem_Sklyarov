@@ -288,7 +288,7 @@ class AlienInvasion:
     def _update_screen(self):
         '''Обновляет изображение на экране и отображает новый экран.'''
         # При каждом проходе цикла перерисовывается экран
-        self.background = pygame.image.load("C:\\Users\\user\\Desktop\\PycharmProjects\\Proj_1sem_Sklyarov\\Project_Game\\alien_invasion\\images\\space.gif"   ).convert_alpha()
+        self.background = pygame.image.load("Project_Game/alien_invasion/images/space.gif").convert_alpha()
         self.screen.blit(self.background, (0, 0))  ### Заполняем экран цветом
         self.SpaceShip.blitme()
         for bullet in self.bullets.sprites():

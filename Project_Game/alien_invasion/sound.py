@@ -3,8 +3,8 @@ from os import path
 
 class Sound():
     def __init__(self):
-        self.sound_bullet = path.join(path.dirname("C:\\Users\\user\\Desktop\\PycharmProjects\\Proj_1sem_Sklyarov\\Project_Game\\alien_invasion\\sound\\laser-blast-descend_gy7c5deo"))
-        self.sound_crush_alien = path.join(path.dirname("C:\\Users\\user\\Desktop\\PycharmProjects\\Proj_1sem_Sklyarov\\Project_Game\\alien_invasion\\sound\\crush.mp3"))
+        self.sound_bullet = path.join(path.dirname("Project_Game/alien_invasion/sound/laser-blast-descend_gy7c5deo"))
+        self.sound_crush_alien = path.join(path.dirname("Project_Game/alien_invasion/sound/crush.mp3"))
         
     
 
