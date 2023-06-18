@@ -12,7 +12,7 @@ class Alien(Sprite):
         self.settings = ai_game.settings
 
         # Загрузка изображения пришельца и назначение атрибута rect.
-        self.image = pygame.image.load("Project_Game/alien_invasion/images/alien.png")
+        self.image = pygame.image.load("alien_invasion/images/alien.png")
         self.image = pygame.transform.scale(self.image, (87, 50))
         self.rect = self.image.get_rect()
 

@@ -4,7 +4,7 @@ class GameStats:
         self.settings = ai_sup_game.settings
         self.reset_stats()
         self.game_active = False
-        open_file_number = open("Project_Game/alien_invasion/max_number.txt", "r")
+        open_file_number = open("alien_invasion/max_number.txt", "r")
         a = open_file_number.read()
         self.high_score = int(a)
 

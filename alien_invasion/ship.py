@@ -14,7 +14,7 @@ class SpaceShip(Sprite):
         self.settings = ai_game.settings
 
         '''Загружает изображение корабля и получает прямоугольник.'''
-        self.image = pygame.image.load("Project_Game/alien_invasion/images/spaceship.bmp")
+        self.image = pygame.image.load("alien_invasion/images/spaceship.bmp")
         self.image = pygame.transform.scale(self.image, (95, 95))  ## Изменение размера корабля
         self.rect = self.image.get_rect()
 
